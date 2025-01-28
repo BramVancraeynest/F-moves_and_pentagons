@@ -1,0 +1,81 @@
+\documentclass[notitlepage,longbibliography,superscriptaddress,floatfix,showpacs]{revtex4-1}
+
+\input{_preamb.sty}
+\input{_tikz}
+
+
+\begin{document}
+	
+\title{Notes on F-moves, pentagons and algebras}
+\author{Bram~\surname{Vancraeynest-De Cuiper}}\email{Bram.VancraeynestDeCuiper{@}UGent.be}
+\affiliation{\it Department of Physics and Astronomy, Ghent University, Krijgslaan 281, 9000 Gent, Belgium}
+\date{\today}
+
+\begin{abstract}
+Throughout we use isotopy invariant normalization, and F-symbols are unitary. All diagrams are read top to bottom.
+\end{abstract}
+
+\maketitle
+
+\section{F-moves}
+Despite being written up for the F-symbol of a fusion category, they should lift to the mixed F-symbols of module categories etc..
+\begin{equation}\label{eq:MonAssoc}
+	\FMove{1}{Y_1}{Y_2}{Y_3}{Y_4}{Y_5}{i}{j} = \sum_{Y_6,k,l} \big(F^{Y_1Y_2Y_3}_{Y_4}\big)_{Y_5,ij}^{Y_6,kl} \FMove{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l}
+\end{equation}
+\begin{equation}
+    \sum_{Y_6,k,l} \big(F^{Y_1Y_2Y_3}_{Y_4}\big)_{Y_5,ij}^{Y_6,kl} \big(\bar F^{Y_1Y_2Y_3}_{Y_4}\big)_{Y_5',i'j'}^{Y_6,kl} = \delta_{Y_5,Y_5'} \delta_{i,i'} \delta_{j,j'}
+\end{equation}
+\begin{equation}
+    \Hmove{1}{Y_1}{Y_2}{Y_3}{Y_4}{Y_5}{i}{j}
+    = \sum_{Y_6,kl} \big( H^{Y_1Y_2}_{Y_3Y_4} \big)^{Y_6,kl}_{Y_5,ij}
+    \Hmove{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l},
+    \quad {\rm where} \quad
+    \big( H^{Y_1Y_2}_{Y_3Y_4} \big)^{Y_6,kl}_{Y_5,ij} = \big(\bar F^{Y_3Y_5Y_2}_{Y_6} \big)^{Y_4,jl}_{Y_1,ik} \times \sqrt{\frac{d_{Y_5}d_{Y_6}}{d_{Y_1}d_{Y_4}}}.
+\end{equation}
+
+\section{Pentagons}
+
+\section{Algebra multiplication}
+\begin{equation}
+\begin{gathered}
+    \FMove{1}{}{}{}{}{}{\mu}{\mu} = \FMove{2}{}{}{}{}{}{\mu}{\mu} \\
+    \iff \sum_{Y_5,\alpha_5,i,j} \big(F^{Y_1Y_2Y_3}_{Y_4})^{Y_6,kl}_{Y_5,ij} \, \mu^{(Y_1,\alpha_1),(Y_2,\alpha_2)}_{(Y_5,\alpha_5),i} \, \mu^{(Y_5,\alpha_3),(Y_3,\alpha_3)}_{(Y_4,\alpha_4),j} = \sum_{\alpha} \mu^{(Y_2,\alpha_2),(Y_3,\alpha_3)}_{(Y_6,\alpha),k} \, \mu^{(Y_1,\alpha_1),(Y_6,\alpha)}_{(Y_4,\alpha_4),l} \\
+    \iff \sum_{\alpha_5} \mu^{(Y_1,\alpha_1),(Y_2,\alpha_2)}_{(Y_5',\alpha_5),i'} \, \mu^{(Y_5',\alpha_3),(Y_3,\alpha_3)}_{(Y_4,\alpha_4),j'} = \sum_{\alpha,Y_6,k,l} \big(\bar F^{Y_1Y_2Y_3}_{Y_4})^{Y_6,kl}_{Y_5',i'j'} \, \mu^{(Y_2,\alpha_2),(Y_3,\alpha_3)}_{(Y_6,\alpha),k} \, \mu^{(Y_1,\alpha_1),(Y_6,\alpha)}_{(Y_4,\alpha_4),l}
+\end{gathered}
+\end{equation}
+For any simple $M\in\mc I_\mc M$ such that $A=\InnHom(M,M)$ this equation is solved by
+\begin{equation}
+\boxed{
+    \mu^{(Y_1,\alpha_1),(Y_2,\alpha_2)}_{(Y_3,\alpha_3),i} = \big( \bar F^{Y_1Y_2M}_M \big)^{M,\alpha_2\alpha_1}_{Y_3,i\alpha_3}
+}.
+\end{equation}
+There could be a prefactor!
+
+{\Bram Double check
+    \begin{equation}
+\boxed{
+    \Delta_{(Y_1,\alpha_1),(Y_2,\alpha_2)}^{(Y_3,\alpha_3),i} = \big( F^{Y_1Y_2M}_M \big)^{M,\alpha_2\alpha_1}_{Y_3,i\alpha_3}
+}.
+\end{equation}
+}
+
+\section{Frobenius algebra conditions (components)}
+
+\begin{equation}
+\begin{gathered}
+    \Hmove{1}{A}{A}{A}{A}{A}{\Delta}{\mu} = \Hmove{2}{A}{A}{A}{A}{A}{\mu}{\Delta} \\
+    \iff
+    \sum_{Y_5,\alpha_5,i,j} \big( H^{Y_1Y_2}_{Y_3Y_4} \big)^{Y_6,kl}_{Y_5,ij} \Delta_{(Y_3\alpha_3),(Y_5\alpha_5)}^{(Y_1\alpha_1),i} \mu_{(Y_4\alpha_4),j}^{(Y_5\alpha_5),(Y_2\alpha_2)} = 
+    \sum_\alpha \mu^{(Y_1\alpha_1),(Y_2\alpha_2)}_{(Y_6\alpha),k} \Delta_{(Y_3\alpha_3),(Y_4\alpha_4)}^{(Y_6\alpha),l}
+\end{gathered}
+\end{equation}
+{\Bram Conjecture:
+\begin{equation}
+\boxed{
+    \Delta_{(Y_2\alpha_2),(Y_3\alpha_3)}^{(Y_1\alpha_1),i} = \big( K^{Y_1M}_{Y_2M} \big)^{M}_{Y_3}
+}
+\end{equation}
+
+}
+
+\end{document}

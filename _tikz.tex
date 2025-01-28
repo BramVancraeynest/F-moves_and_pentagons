@@ -1,0 +1,97 @@
+%\tikzstyle{dot}=[dash pattern= on 0.6pt off 2.1pt]
+\tikzstyle{obj1}=[line width = 0.7pt, line join=round, line cap=round]
+\tikzstyle{obj2}=[line width = 0.7pt, line join=round, line cap=round, color=BrickRed]
+\tikzstyle{mod}=[color=BlueViolet!80, line width = 0.7pt, line join=round, line cap=round]
+\tikzstyle{mor}=[draw=none, fill=gray!22]
+
+\tikzset{->-/.style={decoration={
+			markings,
+			mark=at position #1 with {\arrow{Triangle[width=3.5pt, length=3.5pt]}}},postaction={decorate}}
+}
+\tikzset{-<-/.style={decoration={
+			markings,
+			mark=at position #1 with {\arrowreversed{Triangle[width=3.5pt, length=3.5pt]}}},postaction={decorate}}
+}
+\tikzset{mask point/.style={ transform shape, sloped, 
+		minimum width=20pt, minimum height=4pt, inner sep=0pt, ultra thin, font=\tiny}
+}
+
+\tikzset{
+	clip even odd rule/.code={\pgfseteorule},
+	invclip/.style={clip,insert path=[clip even odd rule]{
+			[reset cm](-\maxdimen,-\maxdimen)rectangle(\maxdimen,\maxdimen)
+}}} 
+
+\newcommand\clipIntersection[1]{
+	(#1.north west) -- (#1.north east) -- (#1.south east) -- (#1.south west) -- (#1.north west)
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\FMove}[8]{
+	\begin{tikzpicture}[scale=0.6,baseline={([yshift=-1ex]current bounding box.center)}]
+		\def\l{1.5};
+		\ifthenelse{#1 = 1}{
+			\draw[obj1] (0,0) -- (0,1);
+			\draw[obj1] (0,1) -- (-\l,3);
+			\draw[obj1] (0,1) -- (\l,3);
+			\draw[obj1] (-\l/2,2) -- (0,3);
+			\node[mor, circle, inner sep=3.3pt] at (0,1) {};
+			\node at (0,1) {${\sss #8}$};
+			\node[mor, circle, inner sep=3.3pt] at (-\l/2,2) {};
+			\node at (-\l/2,2) {${\sss #7}$};
+			\node at (-0.7,1.3) {${\sss #6}$};
+		}{}
+		\ifthenelse{#1 = 2}{
+			\draw[obj1] (0,0) -- (0,1);
+			\draw[obj1] (0,1) -- (-\l,3);
+			\draw[obj1] (0,1) -- (\l,3);
+			\draw[obj1] (\l/2,2) -- (0,3);
+			\node[mor, circle, inner sep=3.3pt] at (\l/2,2) {};
+			\node at (\l/2,2) {${\sss #7}$};
+			\node[mor, circle, inner sep=3.3pt] at (0,1) {};
+			\node at (0,1) {${\sss #8}$};
+			\node at (0.65,1.3) {${\sss #6}$};
+		}{}
+		\node[above] at (-\l,3) {${\sss #2}$};
+		\node[above] at (0,3) {${\sss #3}$};
+		\node[above] at (\l,3) {${\sss #4}$};
+		\node[below] at (0,0) {${\sss #5}$};
+	\end{tikzpicture}
+}
+\newcommand{\Hmove}[8]{
+	\begin{tikzpicture}[scale=0.6,baseline={([yshift=-1ex]current bounding box.center)}]
+		\def\l{1.5};
+		\ifthenelse{#1 = 1}{
+                \draw[obj1] (0,2) -- (0,3);
+                \draw[obj1] (0,2) -- (-\l/2,1);
+                \draw[obj1] (\l,1) -- (\l,0);
+                \draw[obj1] (\l,1) -- (3*\l/2,2);
+                \draw[obj1] (\l,1) -- (0,2);
+			\node[mor, circle, inner sep=3.3pt] at (0,2) {};
+			\node at (0,2) {${\sss #7}$};
+			\node[mor, circle, inner sep=3.3pt] at (\l,1) {};
+			\node at (\l,1) {${\sss #8}$};
+                \node[above] at (0,3) {${\sss #2}$};
+		      \node[above] at (3*\l/2,2) {${\sss #3}$};
+                \node[below] at (-\l/2,1) {${\sss #4}$};
+		      \node[below] at (\l,0) {${\sss #5}$};
+                \node[xshift=1ex,yshift=1.5ex] at (\l/2,1.5) {${\sss #6}$};
+		}{}
+		\ifthenelse{#1 = 2}{
+                \draw[obj1] (0,2) -- (\l/2,3);
+                \draw[obj1] (0,2) -- (-\l/2,3);
+                \draw[obj1] (0,1) -- (\l/2,0);
+                \draw[obj1] (0,1) -- (-\l/2,0);
+                \draw[obj1] (0,1) -- (0,2);
+			\node[mor, circle, inner sep=3.3pt] at (0,2) {};
+			\node at (0,2) {${\sss #7}$};
+			\node[mor, circle, inner sep=3.3pt] at (0,1) {};
+			\node at (0,1) {${\sss #8}$};
+                \node[above] at (-\l/2,3) {${\sss #2}$};
+		      \node[above] at (\l/2,3) {${\sss #3}$};
+                \node[below] at (-\l/2,0) {${\sss #4}$};
+		      \node[below] at (\l/2,0) {${\sss #5}$};
+                \node[left] at (0,1.5) {${\sss #6}$};			
+		}{}
+	\end{tikzpicture}
+}

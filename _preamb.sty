@@ -1,0 +1,97 @@
+\usepackage[utf8]{inputenc}
+\usepackage{ifthen}
+\usepackage{hyperref}
+
+% Lay out %
+%%%%%%%%%%%
+\usepackage{fullpage}
+\usepackage{appendix}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Colors %
+%%%%%%%%%%
+
+\hypersetup{
+	colorlinks,
+	linkcolor={BlueViolet},
+	citecolor={BlueViolet},
+	urlcolor={BlueViolet},
+	pdftitle={},
+	pdfauthor={}
+}
+
+% Figures %
+%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows,matrix,calc,scopes,decorations.markings,intersections,arrows.meta,decorations.pathreplacing,angles,quotes,patterns,decorations.pathmorphing}
+
+\usepackage{showlabels}
+
+% Math %
+%%%%%%%%
+\usepackage{amsthm,amsmath,amssymb,amsfonts,mathtools,tensor}
+
+\usepackage{tikz-cd}
+
+\usepackage{bbold} % For the identity symbol
+\newcommand{\id}{\mathbb{1}}
+\newcommand{\myinv}[1]{#1^{\scalebox{0.9}[1.0]{-}1}}
+\newcommand{\m}{{\scalebox{0.9}[1.0]{-}1}}
+\newcommand{\p}{{\scalebox{0.6}[0.6]{+1}}}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\ketbra}[1]{| #1 \rangle\langle #1 |}
+
+\newcommand{\rU}{{\rm U}}
+\newcommand{\rd}{{\rm d}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\q}{\quad}
+\newcommand{\ot}{\leftarrow}
+\newcommand{\cat}{\lhd}
+\newcommand{\act}{\rhd}
+\DeclareMathOperator{\actb}{\mathrlap{\hspace{3.5pt}\cdot}\rhd}
+\DeclareMathOperator{\catb}{\mathrlap{\hspace{3.5pt}\cdot}\lhd}
+%\DeclareMathOperator{\actb}{\mathrlap{\hspace{1.2pt}\cdot}\rhd}
+%\DeclareMathOperator{\catb}{\mathrlap{\hspace{1.2pt}\cdot}\lhd}
+\newcommand{\nn}{\nonumber}
+\newcommand{\sss}{\scriptstyle}
+\newcommand{\ssss}{\scriptscriptstyle}
+\newcommand{\bul}{\raisebox{1pt}{${\sss \bullet}$}}
+\newcommand{\bulScr}{\raisebox{.5pt}{$\ssss \bullet$}}
+\newcommand{\snum}[1]{\text{\small $#1$}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mbb}{\mathbb}
+\newcommand{\fr}[1]{\mathfrak{#1}}
+\newcommand{\msf}[1]{\mathsf{#1}}
+\newcommand{\tmsf}[1]{\tilde{\mathsf{#1}}}
+\newcommand{\Vect}{\mathsf{Vec}}
+\newcommand{\Rep}{\mathsf{Rep}}
+\newcommand{\Fun}{\mathsf{Fun}}
+\newcommand{\Mod}{\mathsf{Mod}}
+\newcommand{\Bimod}{\mathsf{Bimod}}
+\newcommand{\Ob}{{\rm Ob}}
+\newcommand{\Hom}{{\rm Hom}}
+\newcommand{\InnHom}{\underline{{\rm Hom}}}
+\newcommand{\HomC}{\msf{Hom}}
+\newcommand{\End}{{\rm End}}
+\newcommand{\EndC}{\msf{End}}
+\newcommand{\ub}{\underline}
+\newcommand{\Fib}{\textsf{Fib}}
+\newcommand{\Ind}{\text{Ind}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\CC}[6]{{\scriptsize \left[\begin{array}{@{}cc|c@{}}#1 & #2 & #3 \\ #4 & #5 & #6 \end{array}\right]}}
+
+\newcommand{\Sep}{\\ \noindent\makebox[\linewidth]{\resizebox{0.7\linewidth}{1pt}{$\bullet$}}\bigskip \\}
+
+% Cleveref %
+%%%%%%%%%%%%
+
+\usepackage{cleveref}
+
+
+% Comments %
+%%%%%%%%%%%%
+
+\newcommand{\Bram}{\color{orange}(Bram) }
