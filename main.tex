@@ -19,8 +19,17 @@ Throughout we use isotopy invariant normalization, and F-symbols are unitary. Al
 
 \section{F-moves}
 Despite being written up for the F-symbol of a fusion category, they should lift to the mixed F-symbols of module categories etc..
-\begin{equation}\label{eq:MonAssoc}
+\begin{equation}
 	\FMove{1}{Y_1}{Y_2}{Y_3}{Y_4}{Y_5}{i}{j} = \sum_{Y_6,k,l} \big(F^{Y_1Y_2Y_3}_{Y_4}\big)_{Y_5,ij}^{Y_6,kl} \FMove{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l}
+\end{equation}
+\begin{equation}
+	\FMove{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l} = \sum_{Y_5,i,j} \big(\bar F^{Y_1Y_2Y_3}_{Y_4}\big)_{Y_5,ij}^{Y_6,kl} \FMove{1}{Y_1}{Y_2}{Y_3}{Y_4}{Y_5}{i}{j}
+\end{equation}
+\begin{equation}
+	\FMoveFlipped{1}{Y_1}{Y_2}{Y_3}{Y_4}{Y_5}{i}{j} = \sum_{Y_6,k,l} \big( \bar F^{Y_1Y_2Y_3}_{Y_4} \big)_{Y_5,ij}^{Y_6,kl} \FMoveFlipped{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l}
+\end{equation}
+\begin{equation}
+	\FMoveFlipped{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l} = \sum_{Y_5,i,j} \big( F^{Y_1Y_2Y_3}_{Y_4} \big)_{Y_5,ij}^{Y_6,kl} \FMoveFlipped{1}{Y_1}{Y_2}{Y_3}{Y_4}{Y_5}{i}{j}
 \end{equation}
 \begin{equation}
     \sum_{Y_6,k,l} \big(F^{Y_1Y_2Y_3}_{Y_4}\big)_{Y_5,ij}^{Y_6,kl} \big(\bar F^{Y_1Y_2Y_3}_{Y_4}\big)_{Y_5',i'j'}^{Y_6,kl} = \delta_{Y_5,Y_5'} \delta_{i,i'} \delta_{j,j'}
@@ -30,9 +39,20 @@ Despite being written up for the F-symbol of a fusion category, they should lift
     = \sum_{Y_6,kl} \big( H^{Y_1Y_2}_{Y_3Y_4} \big)^{Y_6,kl}_{Y_5,ij}
     \Hmove{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l},
     \quad {\rm where} \quad
-    \big( H^{Y_1Y_2}_{Y_3Y_4} \big)^{Y_6,kl}_{Y_5,ij} = \big(\bar F^{Y_3Y_5Y_2}_{Y_6} \big)^{Y_4,jl}_{Y_1,ik} \times \sqrt{\frac{d_{Y_5}d_{Y_6}}{d_{Y_1}d_{Y_4}}}.
+    \big( H^{Y_1Y_2}_{Y_3Y_4} \big)^{Y_6,kl}_{Y_5,ij} = \sqrt{\frac{d_{Y_5}d_{Y_6}}{d_{Y_1}d_{Y_4}}} \times \big(\bar F^{Y_3Y_5Y_2}_{Y_6} \big)^{Y_4,jl}_{Y_1,ik}
 \end{equation}
 
+\section{Flippers}
+\begin{equation}
+	\BMove{1}{Y_1}{Y_2}{Y_3}{i} = \sum_j \big( B_{Y_3}^{Y_1Y_2} \big)_{ij} \BMove{2}{Y_1}{Y_2}{Y_3}{j} \quad {\rm where} \quad \big( B_{Y_3}^{Y_1Y_2} \big)_{ij} = \sqrt\frac{d_{Y_1}d_{Y_2}}{d_{Y_3}} \times \big( F^{Y_1Y_2\bar Y_2}_{Y_1}\big)^{\mbb 1,11}_{Y_3,ij}
+\end{equation}
+\begin{equation}
+	\BMoveFlipped{1}{Y_1}{Y_2}{Y_3}{i} = \sum_j \big( \bar B_{Y_3}^{Y_1Y_2} \big)_{ij} \BMoveFlipped{2}{Y_1}{Y_2}{Y_3}{j}
+\end{equation}
+$B$ is unitary:
+\begin{equation}
+	\sum_j \big( B_{Y_3}^{Y_1Y_2} \big)_{ij} \big( \bar B_{Y_3}^{Y_1Y_2} \big)_{i'j} = \delta_{i,i'}
+\end{equation}
 \section{Pentagons}
 
 \section{Algebra multiplication}
