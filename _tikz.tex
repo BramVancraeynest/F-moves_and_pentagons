@@ -90,64 +90,89 @@
 	\end{tikzpicture}
 }
 \newcommand{\Hmove}[8]{
-	\begin{tikzpicture}[scale=0.6,baseline={([yshift=-1ex]current bounding box.center)}]
-		\def\l{1.5};
-		\ifthenelse{#1 = 1}{
-                \draw[obj1] (0,2) -- (0,3);
-                \draw[obj1] (0,2) -- (-\l/2,1);
-                \draw[obj1] (\l,1) -- (\l,0);
-                \draw[obj1] (\l,1) -- (3*\l/2,2);
-                \draw[obj1] (\l,1) -- (0,2);
-			\node[mor, circle, inner sep=3.3pt] at (0,2) {};
-			\node at (0,2) {${\sss #7}$};
-			\node[mor, circle, inner sep=3.3pt] at (\l,1) {};
-			\node at (\l,1) {${\sss #8}$};
-                \node[above] at (0,3) {${\sss #2}$};
-		      \node[above] at (3*\l/2,2) {${\sss #3}$};
-                \node[below] at (-\l/2,1) {${\sss #4}$};
-		      \node[below] at (\l,0) {${\sss #5}$};
-                \node[xshift=1ex,yshift=1.5ex] at (\l/2,1.5) {${\sss #6}$};
-		}{}
-		\ifthenelse{#1 = 2}{
-                \draw[obj1] (0,2) -- (\l/2,3);
-                \draw[obj1] (0,2) -- (-\l/2,3);
-                \draw[obj1] (0,1) -- (\l/2,0);
-                \draw[obj1] (0,1) -- (-\l/2,0);
-                \draw[obj1] (0,1) -- (0,2);
-			\node[mor, circle, inner sep=3.3pt] at (0,2) {};
-			\node at (0,2) {${\sss #7}$};
-			\node[mor, circle, inner sep=3.3pt] at (0,1) {};
-			\node at (0,1) {${\sss #8}$};
-                \node[above] at (-\l/2,3) {${\sss #2}$};
-		      \node[above] at (\l/2,3) {${\sss #3}$};
-                \node[below] at (-\l/2,0) {${\sss #4}$};
-		      \node[below] at (\l/2,0) {${\sss #5}$};
-                \node[left] at (0,1.5) {${\sss #6}$};			
-		}{}
-	\end{tikzpicture}
+\begin{tikzpicture}[scale=0.6,baseline={([yshift=-1ex]current bounding box.center)}]
+	\def\l{1.5};
+	\ifthenelse{#1 = 1}{
+            \draw[obj1] (0,2) -- (0,3);
+            \draw[obj1] (0,2) -- (-\l/2,1);
+            \draw[obj1] (\l,1) -- (\l,0);
+            \draw[obj1] (\l,1) -- (3*\l/2,2);
+            \draw[obj1] (\l,1) -- (0,2);
+		\node[mor, circle, inner sep=3.3pt] at (0,2) {};
+		\node at (0,2) {${\sss #7}$};
+		\node[mor, circle, inner sep=3.3pt] at (\l,1) {};
+		\node at (\l,1) {${\sss #8}$};
+            \node[above] at (0,3) {${\sss #2}$};
+    \node[above] at (3*\l/2,2) {${\sss #3}$};
+            \node[below] at (-\l/2,1) {${\sss #4}$};
+    \node[below] at (\l,0) {${\sss #5}$};
+            \node[xshift=1ex,yshift=1.5ex] at (\l/2,1.5) {${\sss #6}$};
+	}{}
+	\ifthenelse{#1 = 2}{
+            \draw[obj1] (0,2) -- (\l/2,3);
+            \draw[obj1] (0,2) -- (-\l/2,3);
+            \draw[obj1] (0,1) -- (\l/2,0);
+            \draw[obj1] (0,1) -- (-\l/2,0);
+            \draw[obj1] (0,1) -- (0,2);
+		\node[mor, circle, inner sep=3.3pt] at (0,2) {};
+		\node at (0,2) {${\sss #7}$};
+		\node[mor, circle, inner sep=3.3pt] at (0,1) {};
+		\node at (0,1) {${\sss #8}$};
+            \node[above] at (-\l/2,3) {${\sss #2}$};
+    \node[above] at (\l/2,3) {${\sss #3}$};
+            \node[below] at (-\l/2,0) {${\sss #4}$};
+    \node[below] at (\l/2,0) {${\sss #5}$};
+            \node[left] at (0,1.5) {${\sss #6}$};			
+	}{}
+\end{tikzpicture}
+}
+\newcommand{\AMove}[5]{
+\begin{tikzpicture}[scale=0.6,baseline={([yshift=-1ex]current bounding box.center)}]
+	\def\l{1.5};
+	\ifthenelse{#1 = 1}{
+		\draw[obj1] (0,0) -- (0,1);
+		\draw[obj1] (0,1) -- (1,2) node[pos=1.3] {$\sss #3$};
+		\draw[obj1, rounded corners=2pt] (0,1) -- (-.75,2) -- (-1.5,1);
+		\draw[obj1] (-1.5,1) -- (-1.5,0) node[pos=1.3] {$\sss \bar #2$};
+		\node[mor, circle, inner sep=3.3pt] at (0,1) {};
+		\node at (0,1) {${\sss #5}$};
+		\node[below] at (0,0) {${\sss #4}$};
+		\node[xshift=3.5pt, yshift=4.5pt] at (-.375, 1.5) {$\sss #2$};
+		\node[regular polygon, regular polygon sides=3, fill, inner sep=1pt,rotate=30, rounded corners=.3pt] at (-.77,1.9) {};
+	}{}
+	\ifthenelse{#1 = 2}{
+		\draw[obj1] (0,1) -- (-1,0) node[pos=1.3] {$\sss \bar #2$};
+		\draw[obj1] (0,1) -- (1,0) node[pos=1.3] {$\sss #4$};
+		\draw[obj1] (0,1) -- (0,2);
+		\node[mor, circle, inner sep=3.3pt] at (0,1) {};
+		\node[above] at (0,2) {$\sss #3$};
+		\node at (0,1) {${\sss #5}$};
+	}{}		
+\end{tikzpicture}
 }
 \newcommand{\BMove}[5]{
-	\begin{tikzpicture}[scale=0.6,baseline={([yshift=-1ex]current bounding box.center)}]
-		\def\l{1.5};
-		\ifthenelse{#1 = 1}{
-			\draw[obj1] (0,0) -- (0,1);
-			\draw[obj1] (0,1) -- (-1,2) node[pos=1.3] {$\sss #2$};
-			\draw[obj1, rounded corners=2pt] (0,1) -- (.75,2) -- (1.5,1);
-			\draw[obj1] (1.5,1) -- (1.5,0) node[pos=1.3] {$\sss \bar #3$};
-			\node[mor, circle, inner sep=3.3pt] at (0,1) {};
-			\node at (0,1) {${\sss #5}$};
-			\node[below] at (0,0) {${\sss #4}$};
-			\node[xshift=-3.5pt, yshift=4.5pt] at (.375, 1.5) {$\sss #3$};
-		}{}
-		\ifthenelse{#1 = 2}{
-			\draw[obj1] (0,1) -- (-1,0) node[pos=1.3] {$\sss #4$};
-			\draw[obj1] (0,1) -- (1,0) node[pos=1.3] {$\sss \bar #3$};
-			\draw[obj1] (0,1) -- (0,2);
-			\node[mor, circle, inner sep=3.3pt] at (0,1) {};
-			\node[above] at (0,2) {$\sss #2$};
-			\node at (0,1) {${\sss #5}$};
-		}{}		
-	\end{tikzpicture}
+\begin{tikzpicture}[scale=0.6,baseline={([yshift=-1ex]current bounding box.center)}]
+	\def\l{1.5};
+	\ifthenelse{#1 = 1}{
+		\draw[obj1] (0,0) -- (0,1);
+		\draw[obj1] (0,1) -- (-1,2) node[pos=1.3] {$\sss #2$};
+		\draw[obj1, rounded corners=2pt] (0,1) -- (.75,2) -- (1.5,1);
+		\draw[obj1] (1.5,1) -- (1.5,0) node[pos=1.3] {$\sss \bar #3$};
+		\node[mor, circle, inner sep=3.3pt] at (0,1) {};
+		\node at (0,1) {${\sss #5}$};
+		\node[below] at (0,0) {${\sss #4}$};
+		\node[xshift=-3.5pt, yshift=4.5pt] at (.375, 1.5) {$\sss #3$};
+		\node[regular polygon, regular polygon sides=3, fill, inner sep=1pt,rotate=30, rounded corners=.3pt] at (.77,1.9) {};
+	}{}
+	\ifthenelse{#1 = 2}{
+		\draw[obj1] (0,1) -- (-1,0) node[pos=1.3] {$\sss #4$};
+		\draw[obj1] (0,1) -- (1,0) node[pos=1.3] {$\sss \bar #3$};
+		\draw[obj1] (0,1) -- (0,2);
+		\node[mor, circle, inner sep=3.3pt] at (0,1) {};
+		\node[above] at (0,2) {$\sss #2$};
+		\node at (0,1) {${\sss #5}$};
+	}{}		
+\end{tikzpicture}
 }
 \newcommand{\BMoveFlipped}[5]{
 	\begin{tikzpicture}[scale=0.6,baseline={([yshift=-1ex]current bounding box.center)}]
@@ -161,6 +186,7 @@
 			\node at (0,-1) {${\sss #5}$};
 			\node[above] at (0,0) {${\sss #4}$};
 			\node[xshift=-3.5pt, yshift=-4.5pt] at (.375,-1.5) {$\sss #3$};
+			\node[regular polygon, regular polygon sides=3, fill, inner sep=1pt,rotate=30, rounded corners=.3pt] at (.77,-1.9) {};
 		}{}
 		\ifthenelse{#1 = 2}{
 			\draw[obj1] (0,-1) -- (-1,0) node[pos=1.3] {$\sss #4$};

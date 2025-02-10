@@ -44,8 +44,16 @@ Despite being written up for the F-symbol of a fusion category, they should lift
 
 \section{Flippers}
 \begin{equation}
+	\AMove{1}{Y_1}{Y_2}{Y_3}{i} = \sum_j \big( A^{Y_1Y_2}_{Y_3} \big)_{ij} \AMove{2}{Y_1}{Y_2}{Y_3}{j} \quad {\rm where} \quad \big( A^{Y_1Y_2}_{Y_3} \big)_{ij} = \sqrt{\frac{d_{Y_1}d_{Y_2}}{d_{Y_3}}} \times \big( \bar F^{\bar Y_1Y_1Y_2}_{Y_2} \big)^{Y_3,ij}_{\mbb 1,11}
+\end{equation}
+$A$ is unitary:
+\begin{equation}
+	\sum_j \big( A_{Y_3}^{Y_1Y_2} \big)_{ij} \big( \bar A_{Y_3}^{Y_1Y_2} \big)_{i'j} = \delta_{i,i'}
+\end{equation}
+\begin{equation}
 	\BMove{1}{Y_1}{Y_2}{Y_3}{i} = \sum_j \big( B_{Y_3}^{Y_1Y_2} \big)_{ij} \BMove{2}{Y_1}{Y_2}{Y_3}{j} \quad {\rm where} \quad \big( B_{Y_3}^{Y_1Y_2} \big)_{ij} = \sqrt\frac{d_{Y_1}d_{Y_2}}{d_{Y_3}} \times \big( F^{Y_1Y_2\bar Y_2}_{Y_1}\big)^{\mbb 1,11}_{Y_3,ij}
 \end{equation}
+{\Bram Should double check this flipper direction}
 \begin{equation}
 	\BMoveFlipped{1}{Y_1}{Y_2}{Y_3}{i} = \sum_j \big( \bar B_{Y_3}^{Y_1Y_2} \big)_{ij} \BMoveFlipped{2}{Y_1}{Y_2}{Y_3}{j}
 \end{equation}
