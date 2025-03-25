@@ -29,7 +29,7 @@ Despite being written up for the F-symbol of a fusion category, they should lift
 	\FMoveFlipped{1}{Y_1}{Y_2}{Y_3}{Y_4}{Y_5}{i}{j} = \sum_{Y_6,k,l} \big( \bar F^{Y_1Y_2Y_3}_{Y_4} \big)_{Y_5,ij}^{Y_6,kl} \FMoveFlipped{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l}
 \end{equation}
 \begin{equation}
-	\FMoveFlipped{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l} = \sum_{Y_5,i,j} \big( F^{Y_1Y_2Y_3}_{Y_4} \big)_{Y_5,ij}^{Y_6,kl} \FMoveFlipped{1}{Y_1}{Y_2}{Y_3}{Y_4}{Y_5}{i}{j}
+    \FMoveFlipped{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l} = \sum_{Y_5,i,j} \big( F^{Y_1Y_2Y_3}_{Y_4} \big)_{Y_5,ij}^{Y_6,kl} \FMoveFlipped{1}{Y_1}{Y_2}{Y_3}{Y_4}{Y_5}{i}{j}
 \end{equation}
 \begin{equation}
     \sum_{Y_6,k,l} \big(F^{Y_1Y_2Y_3}_{Y_4}\big)_{Y_5,ij}^{Y_6,kl} \big(\bar F^{Y_1Y_2Y_3}_{Y_4}\big)_{Y_5',i'j'}^{Y_6,kl} = \delta_{Y_5,Y_5'} \delta_{i,i'} \delta_{j,j'}
@@ -40,6 +40,10 @@ Despite being written up for the F-symbol of a fusion category, they should lift
     \Hmove{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l},
     \quad {\rm where} \quad
     \big( H^{Y_1Y_2}_{Y_3Y_4} \big)^{Y_6,kl}_{Y_5,ij} = \sqrt{\frac{d_{Y_5}d_{Y_6}}{d_{Y_1}d_{Y_4}}} \times \big(\bar F^{Y_3Y_5Y_2}_{Y_6} \big)^{Y_4,jl}_{Y_1,ik}
+\end{equation}
+\begin{equation}
+    \Gmove{1}{Y_1}{Y_4}{Y_3}{Y_2}{Y_5}{i}{j} = \sum_{Y_6,kl} \big( G^{Y_1Y_2}_{Y_3Y_4}\big)^{Y_6,kl}_{Y_5,ij} \Hmove{2}{Y_1}{Y_2}{Y_3}{Y_4}{Y_6}{k}{l},
+    \quad {\rm where} \quad \big( G^{Y_1Y_2}_{Y_3Y_4}\big)^{Y_6,kl}_{Y_5,ij} = \sqrt{\frac{d_{Y_5}d_{Y_6}}{d_{Y_2}d_{Y_3}}} \big( F^{Y_1Y_5Y_4}_{Y_6} \big)^{Y_2,jk}_{Y_3,il}
 \end{equation}
 
 \section{Flippers}
@@ -68,19 +72,31 @@ So in particular:
 
 \section{Pentagons}
 
+\begin{equation}
+    \sum_{i_5} \big( F^{Y_5Y_2P}_N\big)^{M,i_2i_5}_{Y_4,ji_4} \big( H^{Y_1M}_{Y_3N}\big)^{O,i_1i_3}_{Y_5,ii_5} =
+    \sum_{Y_6,kli_6} \big( H^{Y_1Y_2}_{Y_3Y_4} \big)^{Y_6,kl}_{Y_5,ij} \big( H^{Y_6P}_{Y_3N} \big)^{O,i_6i_3}_{Y_4,li_4} \big( F^{Y_1Y_2P}_O\big)^{M,i_2i_1}_{Y_6,ki_6} 
+\end{equation}
+
 \section{Algebra multiplication}
 \begin{equation}
 \begin{gathered}
     \FMove{1}{}{}{}{}{}{\mu}{\mu} = \FMove{2}{}{}{}{}{}{\mu}{\mu} \\
-    \iff \sum_{Y_5,\alpha_5,i,j} \big(F^{Y_1Y_2Y_3}_{Y_4})^{Y_6,kl}_{Y_5,ij} \, \mu^{(Y_1,\alpha_1),(Y_2,\alpha_2)}_{(Y_5,\alpha_5),i} \, \mu^{(Y_5,\alpha_3),(Y_3,\alpha_3)}_{(Y_4,\alpha_4),j} = \sum_{\alpha} \mu^{(Y_2,\alpha_2),(Y_3,\alpha_3)}_{(Y_6,\alpha),k} \, \mu^{(Y_1,\alpha_1),(Y_6,\alpha)}_{(Y_4,\alpha_4),l} \\
-    \iff \sum_{\alpha_5} \mu^{(Y_1,\alpha_1),(Y_2,\alpha_2)}_{(Y_5',\alpha_5),i'} \, \mu^{(Y_5',\alpha_3),(Y_3,\alpha_3)}_{(Y_4,\alpha_4),j'} = \sum_{\alpha,Y_6,k,l} \big(\bar F^{Y_1Y_2Y_3}_{Y_4})^{Y_6,kl}_{Y_5',i'j'} \, \mu^{(Y_2,\alpha_2),(Y_3,\alpha_3)}_{(Y_6,\alpha),k} \, \mu^{(Y_1,\alpha_1),(Y_6,\alpha)}_{(Y_4,\alpha_4),l}
+    \iff \sum_{Y_5,\alpha_5,i,j} \big(F^{Y_1Y_2Y_3}_{Y_4})^{Y_6,kl}_{Y_5,ij} \, \mu^{(Y_1,\alpha_1),(Y_2,\alpha_2)}_{(Y_5,\alpha_5),i} \, \mu^{(Y_5,\alpha_5),(Y_3,\alpha_3)}_{(Y_4,\alpha_4),j} = \sum_{\alpha} \mu^{(Y_2,\alpha_2),(Y_3,\alpha_3)}_{(Y_6,\alpha),k} \, \mu^{(Y_1,\alpha_1),(Y_6,\alpha)}_{(Y_4,\alpha_4),l} \\
+    \iff \sum_{\alpha_5} \mu^{(Y_1,\alpha_1),(Y_2,\alpha_2)}_{(Y_5',\alpha_5),i'} \, \mu^{(Y_5',\alpha_5),(Y_3,\alpha_3)}_{(Y_4,\alpha_4),j'} = \sum_{\alpha,Y_6,k,l} \big(\bar F^{Y_1Y_2Y_3}_{Y_4})^{Y_6,kl}_{Y_5',i'j'} \, \mu^{(Y_2,\alpha_2),(Y_3,\alpha_3)}_{(Y_6,\alpha),k} \, \mu^{(Y_1,\alpha_1),(Y_6,\alpha)}_{(Y_4,\alpha_4),l}
 \end{gathered}
 \end{equation}
 For any simple $M\in\mc I_\mc M$ such that $A=\InnHom(M,M)$ this equation is solved by
 \begin{equation}
 \boxed{
     \mu^{(Y_1,\alpha_1),(Y_2,\alpha_2)}_{(Y_3,\alpha_3),i} = \big( \bar F^{Y_1Y_2M}_M \big)^{M,\alpha_2\alpha_1}_{Y_3,i\alpha_3}
-}.
+},
+\end{equation}
+or
+\begin{equation}
+\boxed{
+    \mu^{(Y_1,\alpha_1),(Y_2,\alpha_2)}_{(Y_3,\alpha_3),i}
+    = \big( F^{MY_1Y_2}_M \big)^{Y_3,i\alpha_3}_{M,\alpha_1\alpha_2}
+}
 \end{equation}
 There could be a prefactor! In fact, there should be.
 
